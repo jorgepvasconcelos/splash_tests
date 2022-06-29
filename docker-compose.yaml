@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  service_splash:
+    image: scrapinghub/splash
+    container_name: container_splash
+    command: --maxrss 2048 --max-timeout 300 --disable-lua-sandbox --verbosity 1
+    ports:
+      - "8050:8050"
+    restart: unless-stopped
+#    volumes:
+#      - ./data/filters:/etc/splash/filters
+#      - ./data/js-profiles:/etc/splash/js-profiles
+#      - ./data/lua_modules:/etc/splash/lua_modules
+#      - ./data/proxy-profiles:/etc/splash/proxy-profiles
